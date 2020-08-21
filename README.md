@@ -1,79 +1,133 @@
-# Matterhorn 🏔
+<p align="center">
+<img src=".github/logo.svg" alt="Create FastAPI Service" width="100">
+</p>
 
-An API Boilerplate project built with Node.js and Typescript.
+<h3 align="center">  
+  <em>Set up a modern Fastify API in 2 minutes.</em>
+</h3>
 
-- ⏱ Runtime: [Node.js](https://nodejs.org/en/)
-- 🖥 API Framework: [Fastify](https://www.fastify.io/)
-- 🔏 Type System: [TypeScript](https://www.typescriptlang.org/)
-- 🧪 Test Runner: [Jest](https://jestjs.io/)
-- 👕 Linter: [ESLint](https://eslint.org/)
-- 📦 Continuous Integration: [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/)
+<p align="center">
+  <a href="#-demo">✨ Demo</a> &nbsp;
+  <a href="#-quickstart">🚀 Quickstart</a> &nbsp;
+  <a href="#%EF%B8%8F-tooling">🛠️ Tooling</a> &nbsp;
+  <a href="#%E2%84%B9%EF%B8%8F-other-info">ℹ️ Other Info</a> &nbsp;
+</p>
 
-## Quick Start
-1. 🍴 Fork the repository
-2. 👯‍♀️ Clone it to your computer 
-3. 🏃‍♀️ Run npm run install && npm run dev
-4. 📝 Edit any of the files in src/
-5. 👀 Watch as the app magically rebuilds and relaunches itself
+<br>
 
-## Scripts
+<div align="center">
+  <a href="">
+      <img alt="Contributions welcome" src="https://img.shields.io/badge/contributions-welcome-thiel.svg">
+  </a>
+  <!-- <a href="https://gitter.im/amitmerchant1990/electron-markdownify"><img src="https://badges.gitter.im/amitmerchant1990/electron-markdownify.svg"></a>
+  <a href="https://github.com/anfederico/Clairvoyant/issues">
+      <img alt="GitHub Issues" src="https://img.shields.io/github/issues/anfederico/Clairvoyant.svg">
+  </a> -->
+</div>
 
-The following npm scripts can be run using `npm run <script>`. This project relies on `opn` and `rimraf` utilities in order to support cross-platform opening and deleting files.
+<div align="center">
+  <sub>Inspired and heavily based on the amazing <a href="https://github.com/MatterhornDev/matterhorn">Matterhorn</a> project.</sub>
+</div>
 
-- `build` - build the TypeScript files and output to `lib/`
-- `build:watch` - automatically rebuild files if changes are detected in `src/`
-- `clean `- recursively delete the `lib/` and `coverage/` directories
-- `clean:build `- recursively delete the `lib/` directory
-- `clean:coverage` - recursively delete the `coverage/` directory
-- `coverage `- run the test suite and generate code coverage reports
-- `coverage:open` - run npm run coverage then open the results in a browser
-- `dev `- concurrently run `build:watch` and `start:watch` 
-- `lint `- run the linter configured by TSLint on the `src/` directory
-- `start` - run the app from `lib/`. Make sure to use npm run build first!
-- `start:watch` - relaunch the server if new changes are detected in `lib/` 
-- `test `- run unit tests defined in the `tests/` directory
-- `test:ci `- run unit tests and generate necessary files for CI integration
+<br>
 
-## Command Line Arguments & Environment Variables
+## ✨ Demo
 
-Matterhorn implements example usage of both command line arguments and environment variables. It uses `yargs-parser` to manage command line arguments. Command line arguments are passed in through the start command: `node lib/index.js <command line arguments>`. The `--log` argument has been enabled as an example. Running `npm run start` starts up the project without any command line arguments. This command is intended to be used in production, so logging is disabled by default (i.e. we don't pass the `--log` argument). If you are using this command to test your code locally and want to see the logging output, then run `npm run start -- --log`. This passes the command line argument through npm and into the aliased command.
+<img align="left" height="360px" src=".github/demo.svg" />
 
-Environment variables work in a similar way to command line arguments. They can be set in multiple ways depending on the terminal and operating system you are using. In a bash terminal you can specify environment variables as you use any of the above mentioned scripts by prepending the assignment to the command. For example, this project has the *PORT* environment variable enabled. In a bash terminal run `PORT=8080 npm run start` to run the API on port 8080.
+```txt
+𝗙𝗘𝗔𝗧𝗨𝗥𝗘𝗦
 
-## Contributing
+⭐ Get started with a few steps
+⭐ Abstracted tooling automation
+⭐ Clean & modern folder structure
+⭐ Hot Reloading
 
-Open an **issue** if you'd like to report a bug or a feature. Make sure to write a detailed description and indicate if you will or will not be resolving the issue yourself.
 
-If you are interested in contributing make sure to follow these practices:
-- Prepend branches with `fix/`, `feature/`, or `docs/` depending on the change being made
-- NPM commands `test`, `lint`, and `build` run without failing. 
-- If you are solving an open issue, reference it in the Pull Request description using `Ref #<issue number>`.
 
-## Jest
 
-Matterhorn has a unique Jest set up. Under the [`jest/`](./jest) directory there are three configuration files [`ci.config.json`](./jest/ci.config.json), [`coverage.config.json`](./jest/coverage.config.json), and [`test.config.json`](./jest/test.config.json). Each configuration file maps to a specific jest experience.
 
-#### npm run test
 
-Runs jest with the `test.config.json` configuration. This configuration does not collect any code coverage.
 
-#### npm run coverage
 
-Runs jest with the `coverage.config.json` configuration. It runs the same test suite as `npm run test` and collects coverage from all files under the [`src/`](./src) directory. It outputs the coverage information in the following formats: `json`, `text`, `lcov`, and `html`. It does not rely on any external reporter dependencies.
 
-#### npm run test:ci
+Other features coming soon.
+More demos coming soon.
+```
 
-Runs jest with the `ci.config.json` configuration. It runs the same test suite as `npm run test` and collects coverage similar to the `npm run coverage` command, but utilizes jest's built in `ci` caching functionality. Additionally, it outputs the coverage in the following formats: `html`, `json`, and `cobertura`. It utilizes `jest-junit` reporter to generate compatible junit xml files for Azure DevOps test reporting, and the `cobertura` format for the code coverage reporting.
+<br>
 
-<hr>
+## 🚀 Quickstart
 
-### Maintainers
-🦉 Ethan Arrowood _Original Author_ - Follow on: Twitter [@ArrowoodTech](https://twitter.com/arrowoodtech) & GitHub [@Ethan-Arrowood](https://github.com/Ethan-Arrowood/)
+You can get everything up and running in about 2 minutes, following these steps:
 
-🚀 Alyssa Cooper _Maintainer_ - Follow on: Twitter [@ayecoops](https://twitter.com/ayecoops) & GitHub [@Alyssa-Cooper](https://github.com/Alyssa-Cooper/)
+1. **Clone the repository**
 
-<hr>
+   ```shell
+   git clone https://github.com/Alireza2018/create-fastify-api.git
+   ```
 
-### Integration Statuses
+2. **Install & Run**
 
-[![Build Status](https://dev.azure.com/matterhorndev/matterhorn/_apis/build/status/MatterhornDev.matterhorn?branchName=master)](https://dev.azure.com/matterhorndev/matterhorn/_build/latest?definitionId=1&branchName=master)
+   ```shell
+   npm install
+   npm run dev
+   ```
+
+3. **Develop**
+
+   Update the code. Implement functionality. Make something awesome!
+
+   (_It will automatically rebuild every time you make a change! 🎉_)
+
+<br>
+
+## 🛠️ Tooling
+
+The tech stack has been carefully selected. All reasoning is found below each element. You are free to question why the tools has been chosen, and to suggest improvements.
+
+  <details>
+  <summary>🖥 API Framework:</em> <a href=""><b>Fastify</b></a> - <em>a modern, fast (high-performance), web framework for building APIs.</em></summary><br>
+  
+  We needed a web framework to support developer productivity and high execution performance in node.js.
+
+We checked out the [Techempower Web Framework Benchmarks for node.js](https://www.techempower.com/benchmarks/#section=data-r19&hw=cl&test=fortune&l=zik0sf-1p) and
+saw a few high-performing web frameworks. Based on this, we manually reviewed the top performers from a developer experience perspecitve. We found that FastAPI was
+the framework with the highest overall value to support developer productivity and execution performance.
+
+  <br>
+
+  </details>
+
+<br>
+
+## ℹ️ Other Info
+
+This sections holds additional information that may be very important to some. If you're missing any sections, or think that any of the sections found here should be part of the featured sections, don't hessitate to craete an issue or a pull request.
+
+<details>
+  <summary>📝 <em>ToDo</em></summary><br>
+  
+  There's still a way to go. Contributions appreciated!
+
+- [ ] simplify the bootstrapping process to a single command (e.g. `npx create-fastify-api my-api`)
+
+<br>
+  
+</details>
+
+<br>
+
+<a href="https://explosion.ai"><img src=".github/sponsor-logo-1.png" width="125" height="125" align="right" /></a>
+
+# Sponsored by Sci-Code
+
+_Bridging the gap between education and industry._
+
+Sci-Code is actively developing services, tools and technologies that contribute towards closing the gap between industry and education. The motivation and value upon which the Company has been built is usefulness. The key of any country’s societal development is based on Education. It is how a generation of people pass its knowledge, know-how and values to the next one.
+
+This is why we're working to accelerate the advent of a new education system, pillared on the advances in technology that will enable exploratory learning, personalized learning experiences tailored to each individual, and the most stimulating education in the world; verified by our algorithms. This system will serve as an alternative to the current education system, allowing for a seamless and gradual, piece-by-piece transition. And through building this new system, we allow for the change of our current societal dogma of school and learning being perceived as necessarily boring and hard, into school and learning being awesome.
+
+<p align="left">
+  <a href="https://angel.co/company/sci-code/jobs">🚪 Open Positions</a> &nbsp;
+</p>
