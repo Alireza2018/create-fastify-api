@@ -1,0 +1,52 @@
+{
+  "name": "sci-code",
+  "version": "1.0.0",
+  "description": "An API Boilerplate for services written in typescript",
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "build:watch": "npm run build -- --watch",
+    "clean": "npm run clean:build && npm run clean:coverage",
+    "clean:build": "rimraf lib/",
+    "clean:coverage": "rimraf coverage/",
+    "coverage": "jest --config jest/coverage.config.json",
+    "coverage:open": "npm run coverage && opn ./coverage/index.html",
+    "dev": "concurrently \"npm run build:watch\" \"npm run start:watch\"",
+    "install:ci": "npm ci",
+    "lint": "eslint '{src,tests}/**/*.ts'",
+    "start": "node lib/index.js",
+    "start:watch": "nodemon lib/index.js",
+    "test": "jest --config jest/test.config.json",
+    "test:ci": "jest --ci --config jest/ci.config.json"
+  },
+  "author": "Sci-Code AS",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "@types/mongodb": "^3.5.26",
+    "@types/node": "^12.12.14",
+    "@types/yargs-parser": "^13.0.0",
+    "concurrently": "^4.1.0",
+    "eslint": "^5.16.0",
+    "jest": "^24.9.0",
+    "jest-junit": "^10.0.0",
+    "nodemon": "^1.18.11",
+    "opn-cli": "^5.0.0",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.4.2",
+    "yargs-parser": "^18.1.0"
+  },
+  "dependencies": {
+    "@types/jsonwebtoken": "^8.3.5",
+    "fastify": "^3.2.1",
+    "fastify-cors": "^4.1.0",
+    "fastify-jwt": "^1.5.0",
+    "fastify-plugin": "^2.3.1",
+    "jwks-rsa": "^1.9.0",
+    "mongodb": "^3.6.0",
+    "mongodb-typescript": "^2.2.1"
+  },
+  "jest-junit": {
+    "outputDirectory": "coverage"
+  }
+}

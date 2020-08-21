@@ -1,0 +1,39 @@
+steps:
+  - id: "install dependencies"
+    name: "node:14-buster-slim"
+    entrypoint: npm
+    dir: "API_SERVICE_DIRECTORY"
+    args: ["ci"]
+
+  - id: "transpile TS"
+    name: "node:14-buster-slim"
+    entrypoint: npm
+    dir: "API_SERVICE_DIRECTORY"
+    args: ["run", "build"]
+    waitFor: ["install dependencies"]
+
+  # build and push image
+  - id: "build and push container"
+    name: "gcr.io/kaniko-project/executor:latest"
+    args:
+      [
+        "--context=dir://cloud/YOUR_IMAGE_NAME/",
+        "--destination=gcr.io/$PROJECT_ID/YOUR_IMAGE_NAME",
+        "--cleanup",
+      ]
+
+    # Deploy container image to Cloud Run
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk:alpine"
+    waitFor: ["build and push container"]
+    args:
+      [
+        "gcloud",
+        "run",
+        "deploy",
+        "activity-logging",
+        "--image", "gcr.io/$PROJECT_ID/YOUR_IMAGE_NAME:latest",
+        "--allow-unauthenticated", 
+        "--region", "europe-north1",
+        "--platform", "managed",
+        "--port", "8080",
+      ]
