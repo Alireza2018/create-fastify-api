@@ -14,7 +14,7 @@ export default function createServer(opts?: Fastify.ServerOptions) {
   })
 
   fastify.register(fastifyCors, {
-    origin: ["http://localhost:3001", "http://localhost:3000", "https://diggit.no", "https://app.diggit.no"],
+    origin: ["http://localhost:3001", "http://localhost:3000"],
     methods: ["GET", "POST"]
   })
 
