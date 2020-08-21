@@ -1,5 +1,5 @@
 <p align="center">
-<img src=".github/logo.svg" alt="Create FastAPI Service" width="100">
+<img src=".github/logo.svg" alt="Create Fastify API" width="100">
 </p>
 
 <h3 align="center">  
@@ -92,7 +92,7 @@ The tech stack has been carefully selected. All reasoning is found below each el
   We needed a web framework to support developer productivity and high execution performance in node.js.
 
 We checked out the [Techempower Web Framework Benchmarks for node.js](https://www.techempower.com/benchmarks/#section=data-r19&hw=cl&test=fortune&l=zik0sf-1p) and
-saw a few high-performing web frameworks. Based on this, we manually reviewed the top performers from a developer experience perspecitve. We found that FastAPI was
+saw a few high-performing web frameworks. Based on this, we manually reviewed the top performers from a developer experience perspecitve. We found that Fastify was
 the framework with the highest overall value to support developer productivity and execution performance.
 
   <br>
